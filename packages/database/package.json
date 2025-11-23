@@ -1,0 +1,25 @@
+{
+  "name": "@repo/database",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./schema": "./src/schema.ts",
+    "./schema-nextauth": "./src/schema-nextauth.ts",
+    "./client": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "clean": "rm -rf .turbo"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.44.7",
+    "nanoid": "^5.1.6",
+    "postgres": "^3.4.7"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^20",
+    "drizzle-kit": "^0.31.7",
+    "typescript": "^5"
+  }
+}

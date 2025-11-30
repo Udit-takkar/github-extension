@@ -15,13 +15,12 @@ export default function AuthSuccessPage() {
 
       // Send message to extension
       window.postMessage({
-        type: 'AUTH_SUCCESS',
+        type: 'GITHUB_AUTH_SUCCESS',
+        token: (session as any).accessToken,
         user: {
-          id: session.user.id,
+          login: session.user.name,
           email: session.user.email,
-          name: session.user.name,
-          image: session.user.image,
-          accessToken: (session as any).accessToken
+          avatar_url: session.user.image,
         }
       }, '*')
 

@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub Notifications",
+  "version": "0.0.1",
+  "description": "Real-time GitHub notifications with team collaboration",
+  "permissions": ["storage", "notifications", "alarms", "tabs"],
+  "host_permissions": [
+    "https://api.github.com/*",
+    "http://localhost:3000/*",
+    "https://github.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://localhost:3000/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

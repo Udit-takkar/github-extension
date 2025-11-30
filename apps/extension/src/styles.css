@@ -1,0 +1,202 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: var(--color-white);
+  --foreground: var(--color-zinc-900);
+  --popover: var(--color-white);
+  --popover-foreground: var(--color-zinc-900);
+  --primary: var(--color-zinc-800);
+  --primary-foreground: var(--color-zinc-50);
+  --muted: --alpha(var(--color-black) / 4%);
+  --muted-foreground: var(--color-zinc-600);
+  --border: --alpha(var(--color-black) / 10%);
+  --input: --alpha(var(--color-black) / 10%);
+  --ring: var(--color-zinc-400);
+  --destructive: var(--color-red-500);
+  --destructive-foreground: var(--color-red-700);
+}
+
+body {
+  width: 420px;
+  min-height: 200px;
+  max-height: 600px;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-zinc-200);
+  background: var(--color-zinc-50);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.username {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.user-email {
+  font-size: 12px;
+  color: var(--color-zinc-500);
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 480px;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  gap: 12px;
+  color: var(--color-zinc-500);
+}
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+  text-align: center;
+}
+
+.auth-container .icon {
+  color: var(--color-zinc-500);
+  margin-bottom: 16px;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+  text-align: center;
+  gap: 8px;
+  color: var(--color-zinc-500);
+}
+
+.notification-item {
+  display: flex;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-zinc-200);
+  cursor: pointer;
+  gap: 8px;
+  transition: background 0.15s;
+}
+
+.notification-item:hover {
+  background: var(--color-zinc-50);
+}
+
+.notification-item.unread {
+  background: var(--color-blue-50);
+}
+
+.notification-item.unread:hover {
+  background: var(--color-blue-100);
+}
+
+.notification-indicator {
+  padding-top: 4px;
+}
+
+.unread-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-blue-500);
+  border-radius: 50%;
+}
+
+.notification-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+  gap: 8px;
+}
+
+.notification-repo {
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--color-blue-600);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notification-time {
+  font-size: 11px;
+  color: var(--color-zinc-500);
+  white-space: nowrap;
+}
+
+.notification-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.notification-meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
